@@ -1,0 +1,11 @@
+{
+    "name": "my-serverless-project",
+    "version": "1.0.0",
+    "description": "",
+    "main": "handler.js",
+    "scripts": {
+      "test": "echo \"Failed.\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
+  }
