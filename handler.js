@@ -1,12 +1,30 @@
 'use strict';
 
+function getLocalGreeting(language) {
+  switch(language) {
+    case "en":
+      return "Hello!";
+    case "es":
+      return "¡Hola!";
+    case "ru":
+      return "Привет!";
+    default:
+      return "👋";
+  }
+}
+
+function pickLocale() {
+  const languages = ["en", "es", "cn", "fr", "ru"];
+  return languages [Math.floor(Math.random() * languages.length)];
+}
+
 module.exports.hello = async event => {
   return {
     statusCode: 200,
     body: JSON.stringify(
       {
-        message: 'Go Serverless v1.0! Your function executed successfully!',
-        input: event,
+        message: getLocalGreeting(pickLocale()),
+        // input: event,
       },
       null,
       2
