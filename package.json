@@ -1,11 +1,15 @@
 {
-    "name": "my-serverless-project",
-    "version": "1.0.0",
-    "description": "",
-    "main": "handler.js",
-    "scripts": {
-      "test": "echo \"Failed.\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC"
+  "name": "my-serverless-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1"
   }
+}

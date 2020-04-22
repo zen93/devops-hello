@@ -13,24 +13,18 @@ function getLocalGreeting(language) {
   }
 }
 
-function pickLocale() {
-  const languages = ["en", "es", "cn", "fr", "ru"];
-  return languages [Math.floor(Math.random() * languages.length)];
-}
+module.exports.getLocalGreeting = getLocalGreeting;
 
 module.exports.hello = async event => {
   return {
     statusCode: 200,
     body: JSON.stringify(
       {
-        message: getLocalGreeting(pickLocale()),
-        // input: event,
+        message: getLocalGreeting(event.queryStringParameters.l ? event.queryStringParameters.l : "en"),
+        // input: event.queryStringParameters,
       },
       null,
       2
     ),
   };
-
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
 };
